@@ -43,11 +43,25 @@ bool Set::containsElement(int x) const {
 
 bool Set::isSubsetOf(const Set &other) const {
 	for (int i = 0; i < _numItems; ++i) {
-		if (other.containsElement(i)) {
+		if (other.containsElement(_items[i])) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
+}
+
+Set operator+(const Set &a, const Set &b) {
+	Set set = Set();
+	
+	for (int i = 0; i < a._numItems; ++i) {
+		set.addElement(i);
+		++set._numItems;
+	}
+	for (int j = 0; j < b._numItems; ++j) {
+		set.addElement(j);
+		++set._numItems;
+	}
+	return set;
 }
