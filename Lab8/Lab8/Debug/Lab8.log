@@ -1,0 +1,9 @@
+﻿  Set.cpp
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(12): warning C4091: '': ignored on left of 'void' when no variable is declared
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(82): warning C4091: '': ignored on left of 'void' when no variable is declared
+  main.cpp
+  Generating Code...
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(49): warning C4715: 'Set::containsElement': not all control paths return a value
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(60): warning C4715: 'Set::isSubsetOf': not all control paths return a value
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(90): warning C4715: 'operator-': not all control paths return a value
+c:\users\karenna maaser\documents\github\lab-8\lab8\lab8\set.cpp(94): error C4716: 'operator<<': must return a value

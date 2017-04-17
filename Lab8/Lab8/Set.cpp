@@ -78,13 +78,18 @@ Set operator-(const Set &a, const Set &b) {
 
 	for (int i = 0; i < a._numItems; ++i) {
 		for (int j = 0; j < b._numItems; ++j) {
-			if (b.containsElement(a._items[i]) {
+			if (b.containsElement(a._items[i])) {
 				void;
 			}
 			else {
-				set.addElement(b.items[j]);
+				set.addElement(b._items[j]);
 			}
 		}
 		return set;
 	}
+}
+
+std::ostream& operator<<(std::ostream &os, const Set &a) {
+	os << a._items[a._numItems];
+	return os;
 }
