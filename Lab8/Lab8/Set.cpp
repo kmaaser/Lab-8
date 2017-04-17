@@ -56,12 +56,26 @@ Set operator+(const Set &a, const Set &b) {
 	Set set = Set();
 	
 	for (int i = 0; i < a._numItems; ++i) {
-		set.addElement(i);
+		set.addElement(a._items[i]);
 		++set._numItems;
 	}
 	for (int j = 0; j < b._numItems; ++j) {
-		set.addElement(j);
+		set.addElement(b._items[j]);
 		++set._numItems;
 	}
 	return set;
+}
+
+Set operator-(const Set &a, const Set &b) {
+	Set set = Set();
+
+	for (int i = 0; i < a._numItems; ++i) {
+		if (b.containsElement(a._numItems[i])) {
+			void;
+		}
+		else {
+			set.addElement(b._numItems[i]);
+		}
+		return set;
+	}
 }
