@@ -7,8 +7,15 @@
 using namespace std;
 
 void Set::addElement(int x) {
-	_items[_numItems] = x;
-	++_numItems;
+	for (int i = 0; i < _numItems; ++i) {
+		if (x == _items[i]) {
+			void;
+		}
+		else {
+			_items[_numItems] = x;
+			++_numItems;
+		}
+	}	
 }
 
 void Set::removeElement(int x) {
@@ -70,11 +77,13 @@ Set operator-(const Set &a, const Set &b) {
 	Set set = Set();
 
 	for (int i = 0; i < a._numItems; ++i) {
-		if (b.containsElement(a._numItems[i])) {
-			void;
-		}
-		else {
-			set.addElement(b._numItems[i]);
+		for (int j = 0; j < b._numItems; ++j) {
+			if (b.containsElement(a._items[i]) {
+				void;
+			}
+			else {
+				set.addElement(b.items[j]);
+			}
 		}
 		return set;
 	}
