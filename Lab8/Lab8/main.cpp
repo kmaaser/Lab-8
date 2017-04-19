@@ -13,5 +13,4 @@ int main()
 	int Set [1] = { 7 };
 
 	cout << "Test add element" << endl;
-	
 }

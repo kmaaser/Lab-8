@@ -9,7 +9,7 @@ using namespace std;
 void Set::addElement(int x) {
 	for (int i = 0; i < _numItems; ++i) {
 		if (x == _items[i]) {
-			void;
+			return;
 		}
 		else {
 			_items[_numItems] = x;
@@ -42,21 +42,17 @@ bool Set::containsElement(int x) const {
 		if (x == _items[i]) {
 			return true;
 		}
-		else {
-			return false;
-		}
 	}
+	return false;
 }
 
 bool Set::isSubsetOf(const Set &other) const {
 	for (int i = 0; i < _numItems; ++i) {
-		if (other.containsElement(_items[i])) {
-			return true;
-		}
-		else {
+		if (!other.containsElement(_items[i])) {
 			return false;
 		}
 	}
+	return true;
 }
 
 Set operator+(const Set &a, const Set &b) {
@@ -79,7 +75,7 @@ Set operator-(const Set &a, const Set &b) {
 	for (int i = 0; i < a._numItems; ++i) {
 		for (int j = 0; j < b._numItems; ++j) {
 			if (b.containsElement(a._items[i])) {
-				void;
+				return;
 			}
 			else {
 				set.addElement(b._items[j]);
