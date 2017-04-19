@@ -90,6 +90,6 @@ Set operator-(const Set &a, const Set &b) {
 }
 
 std::ostream& operator<<(std::ostream &os, const Set &a) {
-	os << a._items[a._numItems];
+	os << a._items[a._numItems] + ',';
 	return os;
 }
