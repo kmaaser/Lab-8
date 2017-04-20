@@ -12,6 +12,7 @@ int main()
 	Set a;
 	Set b;
 	Set c;
+	Set d;
 
 	cout << "Test add element" << endl;
 	a.addElement(6);
@@ -46,19 +47,22 @@ int main()
 	assert(a.containsElement(5) == false);
 	cout << "contains element 2 test passed" << endl;
 
+	cout << "Test is subset of" << endl;
 	b.addElement(2);
 	b.addElement(3);
+	b.isSubsetOf(a);
+	assert(b.isSubsetOf(a) == false);
+	cout << "is subset of passed" << endl;
 
+	cout << "Test operator+" << endl;
 	c = a + b;
 	assert(c.numElements() == 3);
+	cout << "test operator+ passed" << endl;
 
-	//Set a;
-	//a.addElement(1);
-	//if (a.numElements() != 0) {
-	//	cerr << "empty set does not have zero elements" << endl;
-	//}
-	//else {
-	//	cerr << ".";
-	//}
+	cout << "Test operator-" << endl;
+	d = a - b;
+	assert(d.numElements() == 1);
+	cout << "test operator- passed" << endl;
+
 	return 0;
 }
