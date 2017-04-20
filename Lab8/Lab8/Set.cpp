@@ -58,34 +58,34 @@ bool Set::isSubsetOf(const Set &other) const {
 Set operator+(const Set &a, const Set &b) {
 	Set set = Set();
 	
-	for (int i = 0; i < a._numItems; ++i) {
+	for (int i = 0; i < a.numElements(); ++i) {
 		set.addElement(a._items[i]);
 		++set._numItems;
 	}
-	for (int j = 0; j < b._numItems; ++j) {
-		set.addElement(b._items[j]);
-		++set._numItems;
+	for (int j = 0; j < b.numElements(); ++j) {
+		if (!set.containsElement(b._items[j])) {
+			set.addElement(b._items[j]);
+			++set._numItems;
+		}
 	}
 	return set;
 }
 
 Set operator-(const Set &a, const Set &b) {
-	Set set = Set();
+	Set set;
 
-	for (int i = 0; i < a._numItems; ++i) {
-		for (int j = 0; j < b._numItems; ++j) {
-			if (b.containsElement(a._items[i])) {
-				return;
-			}
-			else {
-				set.addElement(b._items[j]);
-			}
+	for (int i = 0; i < a.numElements(); ++i) {
+		if (!b.containsElement(a._items[i])) {
+			set.addElement(a._items[i]);
 		}
-		return set;
 	}
+	return set;
 }
 
 std::ostream& operator<<(std::ostream &os, const Set &a) {
-	os << a._items[a._numItems] + ',';
+	for (int i = 0;i < a.numElements()-1;i++) {
+		os << a._items[i]+",";
+	}
+	os << a._items[a.numElements() - 1];
 	return os;
 }

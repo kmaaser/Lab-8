@@ -1,4 +1,3 @@
-#pragma once
 //
 //  Set.h
 //  CPP-Set
